@@ -23,6 +23,14 @@ public class Main {
             if (firstWord.equals("echo")){
                 System.out.println(messages);
                 continue;
+            } else if (firstWord.equals("type")) {
+                if (java.util.Arrays.asList("echo", "exit", "type").contains(messages)) {
+                    System.out.println(messages + " is a shell builtin");
+                    continue;
+                } else {
+                    System.out.println(messages + ": not found");
+                    continue;
+                }
             }
         }
 
